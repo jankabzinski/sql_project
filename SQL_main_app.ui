@@ -1,0 +1,4004 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>962</width>
+    <height>644</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout" rowstretch="1,10,1" columnstretch="1,20,1,0" columnminimumwidth="0,0,0,0">
+    <item row="1" column="0">
+     <spacer name="horizontalSpacer">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="1">
+     <widget class="QStackedWidget" name="stackedWidget">
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <widget class="QWidget" name="mainMenu">
+       <layout class="QGridLayout" name="gridLayout_2" columnstretch="4,10,4">
+        <item row="0" column="1">
+         <layout class="QVBoxLayout" name="verticalLayout_3" stretch="0,4,4,0,1,0,1,0,3">
+          <item>
+           <spacer name="verticalSpacer_10">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QLabel" name="label_2">
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>36</pointsize>
+             </font>
+            </property>
+            <property name="layoutDirection">
+             <enum>Qt::LeftToRight</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="text">
+             <string>Szpital</string>
+            </property>
+            <property name="alignment">
+             <set>Qt::AlignCenter</set>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_11">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="dyr_butt">
+            <property name="enabled">
+             <bool>true</bool>
+            </property>
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Dyrektor</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="piel_butt">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Pielęgniarka</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_8">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="lek_butt">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>60</height>
+             </size>
+            </property>
+            <property name="font">
+             <font>
+              <family>Arial</family>
+              <pointsize>16</pointsize>
+             </font>
+            </property>
+            <property name="text">
+             <string>Lekarz</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="verticalSpacer_9">
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>20</width>
+              <height>40</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <spacer name="horizontalSpacer_3">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+        <item row="0" column="2">
+         <spacer name="horizontalSpacer_4">
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="sizeHint" stdset="0">
+           <size>
+            <width>40</width>
+            <height>20</height>
+           </size>
+          </property>
+         </spacer>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="dyrektor">
+       <layout class="QGridLayout" name="gridLayout_3" rowstretch="0,0,0,0">
+        <item row="0" column="0">
+         <widget class="QLabel" name="label">
+          <property name="font">
+           <font>
+            <pointsize>22</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Dyrektor</string>
+          </property>
+         </widget>
+        </item>
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_3" stretch="6,1">
+          <item>
+           <spacer name="horizontalSpacer_5">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="d_backtomain">
+            <property name="text">
+             <string>Ekran główny</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout">
+          <item>
+           <widget class="QPushButton" name="d_add">
+            <property name="text">
+             <string>Dodaj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="d_delete">
+            <property name="text">
+             <string>Usuń</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="d_edit">
+            <property name="text">
+             <string>Modyfikuj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="d_search">
+            <property name="text">
+             <string>Szukaj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="d_show_all">
+            <property name="text">
+             <string>Wyświetl wszystko</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTabWidget" name="tabWidget">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="d_piel_tab">
+           <attribute name="title">
+            <string>Pielęgniarki</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_4" columnstretch="3,1,2">
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_5" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_4">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_4">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="d_piel_oper_combo">
+                <property name="editable">
+                 <bool>false</bool>
+                </property>
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Modyfikuj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_3">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_4">
+              <item>
+               <widget class="QGroupBox" name="d_piel_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_6" stretch="0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_40">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_66">
+                   <property name="text">
+                    <string>Imie</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_piel_gM_imie_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_67">
+                   <property name="text">
+                    <string>Nazwisko</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_piel_gM_nazw_edit"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_44">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="d_piel_gM_notif_label">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_2" stretch="0,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_42">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="d_piel_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_7">
+                 <item>
+                  <widget class="QLabel" name="label_3">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_piel_gU_idpiel_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_41">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="d_piel_gMod">
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_8" stretch="2,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_5">
+                   <property name="text">
+                    <string>Id pracownika pielęgniarka, który ma ulec modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_piel_gMod_idpiel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="d_piel_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_43">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="d_lek_tab">
+           <attribute name="title">
+            <string>Lekarze</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_5" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_12">
+              <item>
+               <widget class="QGroupBox" name="d_lek_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_13" stretch="0,0,0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_48">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_68">
+                   <property name="text">
+                    <string>Imie</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_lek_gM_imie_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_69">
+                   <property name="text">
+                    <string>Nazwisko</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_lek_gM_nazw_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_74">
+                   <property name="text">
+                    <string>Specjalizacja</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_lek_gM_spec_edit">
+                   <property name="enabled">
+                    <bool>true</bool>
+                   </property>
+                   <property name="clearButtonEnabled">
+                    <bool>false</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_49">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="d_lek_gM_notif_label">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_14" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_5">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_9">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="d_lek_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_6">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_9" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_45">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="d_lek_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_10">
+                 <item>
+                  <widget class="QLabel" name="label_6">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_lek_gU_idlek_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_46">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="d_lek_gMod">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_11" stretch="2,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_7">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_lek_gMod_idlek_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="d_lek_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_47">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="d_sala_tab">
+           <attribute name="title">
+            <string>Sale</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_6" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_24">
+              <item>
+               <widget class="QGroupBox" name="d_sal_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_25" stretch="0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_58">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_72">
+                   <property name="text">
+                    <string>Typ sali</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="d_sal_gM_type_combo">
+                   <item>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Gabinet lekarski</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Sala operacyjna</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Sala z chorymi</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_59">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="d_sal_gM_notif_label">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_26" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_14">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_17">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="d_sal_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Modyfikuj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_15">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_21" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_55">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="d_sal_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_22">
+                 <item>
+                  <widget class="QLabel" name="label_14">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_sal_gU_idsali_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_56">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="d_sal_gMod">
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_23" stretch="2,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_15">
+                   <property name="text">
+                    <string>Id sali, która ma ulec modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="d_sal_gMod_idsali_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="d_sal_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_57">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="pielegniarka">
+       <layout class="QGridLayout" name="gridLayout_8">
+        <item row="1" column="0">
+         <widget class="QTabWidget" name="tabWidget_2">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="p_pac_tab">
+           <attribute name="title">
+            <string>Pacjent</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_10" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_30">
+              <item>
+               <widget class="QGroupBox" name="p_pac_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_31" stretch="0,0,0,0,0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_60">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_73">
+                   <property name="text">
+                    <string>Imie</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gM_imie_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_75">
+                   <property name="text">
+                    <string>Nazwisko</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gM_nazw_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_76">
+                   <property name="text">
+                    <string>PESEL</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gM_pesel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_77">
+                   <property name="text">
+                    <string>Data urodzenia</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDateEdit" name="p_pac_gM_date_dedit"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_61">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="p_pac_gM_notif_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_32" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_16">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_21">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="p_pac_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_17">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_27" stretch="1,4,1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_62">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_pac_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_28">
+                 <item>
+                  <widget class="QLabel" name="label_18">
+                   <property name="text">
+                    <string>PESEL pacjenta usuwanego</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gU_pesel_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_34">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_pac_gKLC">
+                <property name="title">
+                 <string>Karty leczenia choroby</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_21">
+                 <item row="1" column="0">
+                  <widget class="QLineEdit" name="p_pac_gKLC_pesel_edit"/>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QPushButton" name="p_pac_gKLC_butt">
+                   <property name="text">
+                    <string>Wyświetl karty leczenia chorób pacjenta</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_54">
+                   <property name="text">
+                    <string>Wprowadź PESEL pacjenta, aby wyświetlić jego karty leczenia</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_63">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_pac_gMod">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_29">
+                 <item>
+                  <widget class="QLabel" name="label_19">
+                   <property name="text">
+                    <string>PESEL pacjenta do modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gMod_pesel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="p_pac_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_64">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="p_visit_tab">
+           <attribute name="title">
+            <string>Odwiedziny</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_11" columnstretch="3,1,2">
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_35" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_18">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_23">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="p_odw_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_19">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_33">
+              <item>
+               <widget class="QGroupBox" name="p_odw_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_34" stretch="1,0,0,0,0,0,0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_65">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_78">
+                   <property name="text">
+                    <string>Imie odwiedzającego</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_odw_gM_imie_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_79">
+                   <property name="text">
+                    <string>Nazwisko odwiedzającego</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_odw_gM_nazw_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_80">
+                   <property name="text">
+                    <string>PESEL odwiedzającego</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_odw_gM_peselO_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_94">
+                   <property name="text">
+                    <string>PESEL pacjenta, który jest odwiedzany</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_odw_gM_pesel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_95">
+                   <property name="text">
+                    <string>Stopień pokrewieństwa</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="p_odw_gM_pokr_combo">
+                   <item>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Rodzeństwo</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Dziadkowie</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Rodzice</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Kuzynostwo</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Wujostwo</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_66">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="p_odw_gM_notif_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_36" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_67">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_odw_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_37">
+                 <item>
+                  <widget class="QLabel" name="label_24">
+                   <property name="text">
+                    <string>Niedostepne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_11"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_68">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_odw_gMod">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_38">
+                 <item>
+                  <widget class="QLabel" name="label_25">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_12"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_18">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_69">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="p_bed_tab">
+           <attribute name="title">
+            <string>Łóżko</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_12" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_39">
+              <item>
+               <widget class="QGroupBox" name="p_bed_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_40" stretch="0,0,0,0,0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_70">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_81">
+                   <property name="text">
+                    <string>Położenie łóżka na sali</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="p_bed_gM_plc_combo">
+                   <item>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Przy oknie</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Przy ścianie</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Przy drzwiach</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_82">
+                   <property name="text">
+                    <string>Respirator</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="p_bed_gM_res_combo">
+                   <item>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Tak</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Nie</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_29">
+                   <property name="text">
+                    <string>Id sali, w której znajduje się łóżko</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_bed_gM_idsali_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_83">
+                   <property name="text">
+                    <string>PESEL pacjenta zajmującego łóżko</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_bed_gM_pesel_edit"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_71">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="p_bed_gM_notif_label">
+                   <property name="font">
+                    <font>
+                     <family>Arial</family>
+                     <pointsize>10</pointsize>
+                    </font>
+                   </property>
+                   <property name="text">
+                    <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;br/&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_44" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_20">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_28">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="p_bed_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Modyfikuj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_21">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_41" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_72">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_bed_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_42">
+                 <item>
+                  <widget class="QLabel" name="label_26">
+                   <property name="text">
+                    <string>Id łóżka, które ma zostać usunięty</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_bed_gU_idbed_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_73">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_bed_gMod">
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_43" stretch="2,1,1">
+                 <item>
+                  <widget class="QLabel" name="label_27">
+                   <property name="text">
+                    <string>Id łóżka, który ma ulec modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_bed_gMod_idbed_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="p_bed_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_74">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="p_assign_tab">
+           <attribute name="title">
+            <string>Przypisanie do sali</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_14" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_51">
+              <item>
+               <widget class="QGroupBox" name="p_assign_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_52" stretch="0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_80">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_92">
+                   <property name="text">
+                    <string>Id sali, do przypisania</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_assign_gM_idsali_edit"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_81">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="p_assign_gM_notif_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_53" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_24">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_35">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="p_assign_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Modyfikuj</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Usuń</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_25">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_54" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_82">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_assign_gU">
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_55">
+                 <item>
+                  <widget class="QLabel" name="label_36">
+                   <property name="text">
+                    <string>Id pielęgniarki, do usunięcia przypisu do sali</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_assign_gU_idpiel_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_83">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_assign_gMod">
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_56">
+                 <item>
+                  <widget class="QLabel" name="label_37">
+                   <property name="text">
+                    <string>Id pielęgniarki do modyfikacji przypisu do sali</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_assign_gMod_idpiel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="p_assign_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_84">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab_3">
+           <attribute name="title">
+            <string>Sale</string>
+           </attribute>
+           <widget class="QLabel" name="label_13">
+            <property name="geometry">
+             <rect>
+              <x>230</x>
+              <y>90</y>
+              <width>381</width>
+              <height>141</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Wyświetlanie dostępnych sali&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_16">
+            <property name="geometry">
+             <rect>
+              <x>740</x>
+              <y>310</y>
+              <width>91</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;|&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;V&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+        <item row="2" column="0" rowspan="2">
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QPushButton" name="p_add">
+            <property name="text">
+             <string>Dodaj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="p_delete">
+            <property name="text">
+             <string>Usuń</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="p_edit">
+            <property name="text">
+             <string>Modyfikuj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="p_search">
+            <property name="text">
+             <string>Szukaj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="p_show_all">
+            <property name="text">
+             <string>Wyświetl wszystko</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="4" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="6,1">
+          <item>
+           <spacer name="horizontalSpacer_6">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="p_backtomain">
+            <property name="text">
+             <string>Ekran główny</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_8">
+          <property name="font">
+           <font>
+            <pointsize>22</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Pielęgniarka</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="lekarz">
+       <layout class="QGridLayout" name="gridLayout_9">
+        <item row="3" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_6" stretch="6,1">
+          <item>
+           <spacer name="horizontalSpacer_7">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="l_backtomain">
+            <property name="text">
+             <string>Ekran główny</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="2" column="0">
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <widget class="QPushButton" name="l_add">
+            <property name="text">
+             <string>Dodaj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="l_delete">
+            <property name="text">
+             <string>Usuń</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="l_edit">
+            <property name="text">
+             <string>Modyfikuj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="l_search">
+            <property name="text">
+             <string>Szukaj</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPushButton" name="l_show_all">
+            <property name="text">
+             <string>Wyświetl wszystko</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </item>
+        <item row="1" column="0">
+         <widget class="QTabWidget" name="tabWidget_3">
+          <property name="currentIndex">
+           <number>0</number>
+          </property>
+          <widget class="QWidget" name="l_klc_tab">
+           <attribute name="title">
+            <string>Karta leczenia choroby</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_15" columnstretch="3,1,2">
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_59" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_26">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_39">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="l_klc_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Usuń</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Modyfikuj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_27">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_60" stretch="1,4,1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_87">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_klc_gU">
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_61">
+                 <item>
+                  <widget class="QLabel" name="label_40">
+                   <property name="text">
+                    <string>Nr karty leczenia choroby do usunięcia</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_klc_gU_nrkart_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_35">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_klc_gKLC">
+                <property name="title">
+                 <string>Karty leczenia choroby</string>
+                </property>
+                <layout class="QGridLayout" name="gridLayout_22">
+                 <item row="0" column="0">
+                  <widget class="QLabel" name="label_55">
+                   <property name="text">
+                    <string>Wprowadź PESEL pacjenta, aby wyświetlić jego karty leczenia</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item row="1" column="0">
+                  <widget class="QLineEdit" name="l_klc_gKLC_pesel_edit"/>
+                 </item>
+                 <item row="2" column="0">
+                  <widget class="QPushButton" name="l_klc_gKLC_butt">
+                   <property name="text">
+                    <string>Wyświetl karty leczenia chorób pacjenta</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_88">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_klc_gMod">
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_62">
+                 <item>
+                  <widget class="QLabel" name="label_41">
+                   <property name="text">
+                    <string>Nr karty leczenie choroby do modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_klc_gMod_nrkart_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="l_klc_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_89">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_57">
+              <item>
+               <widget class="QGroupBox" name="l_klc_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_58" stretch="0,0,0,0,0,0,0,0,1,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_85">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_85">
+                   <property name="text">
+                    <string>PESEL pacjenta</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_klc_gM_pesel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_87">
+                   <property name="text">
+                    <string>Nazwa choroby</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_klc_gM_idchor_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_88">
+                   <property name="text">
+                    <string>Nazwa leku</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_klc_gM_idlek_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_89">
+                   <property name="text">
+                    <string>Stan</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QTextEdit" name="l_klc_gM_stan_txt_edit"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_86">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="l_klc_gM_notif_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="l_appoin_tab">
+           <attribute name="title">
+            <string>Wizyta</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_16" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_63">
+              <item>
+               <widget class="QGroupBox" name="l_appoin_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_64" stretch="0,0,0,0,0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_90">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_90">
+                   <property name="text">
+                    <string>Imie lekarza</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_appoin_gM_imielek_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_34">
+                   <property name="text">
+                    <string>Nazwisko lekarza</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_appoin_gM_nazwlek_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_91">
+                   <property name="text">
+                    <string>PESEL pacjenta</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_appoin_gM_pesel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_97">
+                   <property name="text">
+                    <string>Data wizyty</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDateEdit" name="l_appoin_gM_dateofappoin_dedit">
+                   <property name="dateTime">
+                    <datetime>
+                     <hour>0</hour>
+                     <minute>0</minute>
+                     <second>0</second>
+                     <year>2022</year>
+                     <month>2</month>
+                     <day>5</day>
+                    </datetime>
+                   </property>
+                   <property name="minimumDate">
+                    <date>
+                     <year>2022</year>
+                     <month>2</month>
+                     <day>5</day>
+                    </date>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_91">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="l_appoin_gM_notif_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_65" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_28">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_43">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="l_appoin_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Usuń</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_29">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_66" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_92">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_appoin_gU">
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_67">
+                 <item>
+                  <widget class="QLabel" name="label_93">
+                   <property name="text">
+                    <string>ID wizyty</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_appoin_gU_idlek_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_93">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_appoin_gMod">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_68">
+                 <item>
+                  <widget class="QLabel" name="label_115">
+                   <property name="text">
+                    <string>ID lekarza</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_appoin_gMod_idlek_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_45">
+                   <property name="text">
+                    <string>PESEL pacjenta</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_appoin_gMod_pesel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="l_appoin_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_94">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="l_oper_tab">
+           <attribute name="title">
+            <string>Operacje</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_17" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_69">
+              <item>
+               <widget class="QGroupBox" name="l_oper_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_70" stretch="1,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_95">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_117">
+                   <property name="text">
+                    <string>Nazwa operacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gM_nazwa_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_98">
+                   <property name="text">
+                    <string>PESEL pacjenta operowanego</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gM_pesel_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_99">
+                   <property name="text">
+                    <string>Imie lekarza operującego</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gM_imielek_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_38">
+                   <property name="text">
+                    <string>Nazwisko lekarza operującego</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gM_nazwilek_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_100">
+                   <property name="text">
+                    <string>Nazwa choroby</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gM_idchor_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_116">
+                   <property name="text">
+                    <string>ID sali</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gM_idsali_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_101">
+                   <property name="text">
+                    <string>Data operacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDateEdit" name="l_oper_gM_date_dedit">
+                   <property name="dateTime">
+                    <datetime>
+                     <hour>0</hour>
+                     <minute>0</minute>
+                     <second>0</second>
+                     <year>2022</year>
+                     <month>2</month>
+                     <day>5</day>
+                    </datetime>
+                   </property>
+                   <property name="minimumDate">
+                    <date>
+                     <year>2022</year>
+                     <month>2</month>
+                     <day>5</day>
+                    </date>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_118">
+                   <property name="text">
+                    <string>Czas trwania operacji (min)</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QSpinBox" name="l_oper_gM_time_spinbox">
+                   <property name="maximum">
+                    <number>600</number>
+                   </property>
+                   <property name="singleStep">
+                    <number>20</number>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_96">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="l_oper_gM_notif_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_71" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_30">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_47">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="l_oper_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Usuń</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_31">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_72" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_97">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_oper_gU">
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_73">
+                 <item>
+                  <widget class="QLabel" name="label_48">
+                   <property name="text">
+                    <string>ID usuwanej operacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gU_idoper_edit"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_98">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_oper_gMod">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_74">
+                 <item>
+                  <widget class="QLabel" name="label_49">
+                   <property name="text">
+                    <string>ID operacji do modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_oper_gMod_idoper_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="l_oper_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_99">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="l_lek_tab">
+           <attribute name="title">
+            <string>Leki</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_18" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_75">
+              <item>
+               <widget class="QGroupBox" name="l_leki_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_76" stretch="0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_100">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_102">
+                   <property name="text">
+                    <string>Nazwa leku</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_leki_gM_nazwa_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_103">
+                   <property name="text">
+                    <string>Na raceptę</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="l_leki_gM_rec_combo">
+                   <item>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Nie</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Tak</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_101">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="l_leki_gM_notif_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_77" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_32">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_51">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="l_leki_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Szukaj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_33">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_78" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_102">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_leki_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_79">
+                 <item>
+                  <widget class="QLabel" name="label_52">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_25"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_103">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="groupBox_39">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_80">
+                 <item>
+                  <widget class="QLabel" name="label_53">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_26"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="pushButton_29">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_104">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="l_chor_tab">
+           <attribute name="title">
+            <string>Choroba</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_19" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_87">
+              <item>
+               <widget class="QGroupBox" name="l_chor_gM">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_88" stretch="0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_105">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_106">
+                   <property name="text">
+                    <string>Nazwa choroby</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_chor_gM_nazwa_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_107">
+                   <property name="text">
+                    <string>Uleczalność</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QComboBox" name="l_chor_gM_ulecz_combo">
+                   <item>
+                    <property name="text">
+                     <string/>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Tak</string>
+                    </property>
+                   </item>
+                   <item>
+                    <property name="text">
+                     <string>Nie</string>
+                    </property>
+                   </item>
+                  </widget>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_106">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="l_chor_gM_notify_label">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_89" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_36">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_59">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="l_chor_oper_combo">
+                <item>
+                 <property name="text">
+                  <string>Szukaj</string>
+                 </property>
+                </item>
+                <item>
+                 <property name="text">
+                  <string>Modyfikuj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_37">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_90" stretch="1,4,1,4,1">
+              <item>
+               <spacer name="verticalSpacer_107">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_chor_gU">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_91">
+                 <item>
+                  <widget class="QLabel" name="label_60">
+                   <property name="text">
+                    <string>Niedostępne</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="lineEdit_29"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_108">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="l_chor_gMod">
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_92">
+                 <item>
+                  <widget class="QLabel" name="label_61">
+                   <property name="text">
+                    <string>ID choroby do modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="l_chor_gMod_idchor_edit"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="l_chor_gMod_butt">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_109">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="l_pacjent_tab">
+           <attribute name="title">
+            <string>Pacjent</string>
+           </attribute>
+           <layout class="QGridLayout" name="gridLayout_7" columnstretch="3,1,2">
+            <item row="0" column="0">
+             <layout class="QVBoxLayout" name="verticalLayout_117">
+              <item>
+               <widget class="QGroupBox" name="p_pac_gM_3">
+                <property name="title">
+                 <string/>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_118" stretch="0,0,0,0,0,0,0,0,0,3,2">
+                 <item>
+                  <spacer name="verticalSpacer_140">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_138">
+                   <property name="text">
+                    <string>Imie</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gM_imie_edit_3"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_139">
+                   <property name="text">
+                    <string>Nazwisko</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gM_nazw_edit_3"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_140">
+                   <property name="text">
+                    <string>PESEL</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gM_pesel_edit_3"/>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="label_141">
+                   <property name="text">
+                    <string>Data urodzenia</string>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QDateEdit" name="p_pac_gM_date_dedit_3"/>
+                 </item>
+                 <item>
+                  <spacer name="verticalSpacer_141">
+                   <property name="orientation">
+                    <enum>Qt::Vertical</enum>
+                   </property>
+                   <property name="sizeHint" stdset="0">
+                    <size>
+                     <width>20</width>
+                     <height>40</height>
+                    </size>
+                   </property>
+                  </spacer>
+                 </item>
+                 <item>
+                  <widget class="QLabel" name="p_pac_gM_notif_label_3">
+                   <property name="text">
+                    <string/>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="1">
+             <layout class="QVBoxLayout" name="verticalLayout_119" stretch="1,0,0,5">
+              <item>
+               <spacer name="verticalSpacer_142">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QLabel" name="label_31">
+                <property name="text">
+                 <string>Operacje</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QComboBox" name="p_pac_oper_combo_3">
+                <item>
+                 <property name="text">
+                  <string>Dodaj/Szukaj</string>
+                 </property>
+                </item>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_143">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+            <item row="0" column="2">
+             <layout class="QVBoxLayout" name="verticalLayout_120" stretch="1,4,4,1">
+              <item>
+               <spacer name="verticalSpacer_144">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_pac_gU_3">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Usuń</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_121">
+                 <item>
+                  <widget class="QLabel" name="label_32">
+                   <property name="text">
+                    <string>PESEL pacjenta usuwanego</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gU_pesel_edit_3"/>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <widget class="QGroupBox" name="p_pac_gMod_3">
+                <property name="enabled">
+                 <bool>false</bool>
+                </property>
+                <property name="title">
+                 <string>Modyfikuj</string>
+                </property>
+                <layout class="QVBoxLayout" name="verticalLayout_122">
+                 <item>
+                  <widget class="QLabel" name="label_33">
+                   <property name="text">
+                    <string>PESEL pacjenta do modyfikacji</string>
+                   </property>
+                   <property name="alignment">
+                    <set>Qt::AlignCenter</set>
+                   </property>
+                   <property name="wordWrap">
+                    <bool>true</bool>
+                   </property>
+                  </widget>
+                 </item>
+                 <item>
+                  <widget class="QLineEdit" name="p_pac_gMod_pesel_edit_3"/>
+                 </item>
+                 <item>
+                  <widget class="QPushButton" name="p_pac_gMod_butt_3">
+                   <property name="text">
+                    <string>Załaduj wartości do modyfikacji</string>
+                   </property>
+                  </widget>
+                 </item>
+                </layout>
+               </widget>
+              </item>
+              <item>
+               <spacer name="verticalSpacer_147">
+                <property name="orientation">
+                 <enum>Qt::Vertical</enum>
+                </property>
+                <property name="sizeHint" stdset="0">
+                 <size>
+                  <width>20</width>
+                  <height>40</height>
+                 </size>
+                </property>
+               </spacer>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+          <widget class="QWidget" name="tab">
+           <attribute name="title">
+            <string>Sale</string>
+           </attribute>
+           <widget class="QLabel" name="label_10">
+            <property name="geometry">
+             <rect>
+              <x>260</x>
+              <y>110</y>
+              <width>381</width>
+              <height>141</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:18pt; font-weight:600;&quot;&gt;Wyświetlanie dostępnych sali&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+           <widget class="QLabel" name="label_11">
+            <property name="geometry">
+             <rect>
+              <x>740</x>
+              <y>310</y>
+              <width>91</width>
+              <height>61</height>
+             </rect>
+            </property>
+            <property name="text">
+             <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;|&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style=&quot; font-size:14pt; font-weight:600;&quot;&gt;V&lt;/span&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+            </property>
+           </widget>
+          </widget>
+         </widget>
+        </item>
+        <item row="0" column="0">
+         <widget class="QLabel" name="label_12">
+          <property name="font">
+           <font>
+            <pointsize>22</pointsize>
+           </font>
+          </property>
+          <property name="text">
+           <string>Lekarz</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </widget>
+     </widget>
+    </item>
+    <item row="0" column="1">
+     <spacer name="verticalSpacer">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="2" column="1">
+     <spacer name="verticalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+    <item row="1" column="2">
+     <spacer name="horizontalSpacer_2">
+      <property name="orientation">
+       <enum>Qt::Horizontal</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>40</width>
+        <height>20</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>962</width>
+     <height>21</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
