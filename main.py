@@ -20,6 +20,7 @@ servicename = 'dblab02_students.cs.put.poznan.pl'
 
 
 cnxn = cx_Oracle.connect(user='inf145220', password='inf145220', dsn='%s/%s' % (hostname, servicename), encoding="UTF-8")
+cnxn.autocommit = True
 cursor = cnxn.cursor()
 
 class CardWidget(QWidget):
@@ -155,6 +156,13 @@ class SQLappWindow(QMainWindow):
             imie = self.d_piel_gM_imie_edit.text().upper()
             nazwisko = self.d_piel_gM_nazw_edit.text().upper()
 
+            if not imie.isalpha() or not nazwisko.isalpha():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
+
+
             insert_pracownik = """INSERT INTO pracownik VALUES (DEFAULT, :imie, :nazwisko, :zatrudniony)"""
             cursor.prepare(insert_pracownik)
 
@@ -170,6 +178,12 @@ class SQLappWindow(QMainWindow):
             imie = self.d_lek_gM_imie_edit.text().upper()
             nazwisko = self.d_lek_gM_nazw_edit.text().upper()
             specjal = self.d_lek_gM_spec_edit.text().upper()
+
+            if not imie.isalpha() or not nazwisko.isalpha() or not specjal.isalpha():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
 
             insert_pracownik = """INSERT INTO pracownik VALUES (DEFAULT, :imie, :nazwisko, :zatrudniony)"""
             cursor.prepare(insert_pracownik)
@@ -241,6 +255,12 @@ class SQLappWindow(QMainWindow):
             nazwisko = self.d_piel_gM_nazw_edit.text().upper()
             # sprawdz czy istnieje
 
+            if not id_prac.isnumeric() or not nazwisko.isalpha() :
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Nazwisko lub id_pracownika jest nieprawidlowe')
+                error_dialog.exec_()
+                return
+
             update_nazwisko = 'UPDATE pielegniarka SET nazwisko = :naz WHERE id_prac = :id'
 
             cursor.execute(update_nazwisko, [nazwisko, id_prac])
@@ -250,6 +270,12 @@ class SQLappWindow(QMainWindow):
             id_sali = self.d_sal_gMod_idsali_edit.text()
             typ_sali = self.d_sal_gM_type_combo.currentText()
             # sprawdz czy istnieje sala po id_sali
+
+            if not id_sali.isnumeric() or not typ_sali.isalpha():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('id_sali lub typ_sali jest nieprawidlowe')
+                error_dialog.exec_()
+                return
 
             updateSala = ('UPDATE sala SET typ = :typp WHERE id_sali = :id_salii')
             cursor.execute(updateSala, [typ_sali, id_sali])
@@ -268,7 +294,7 @@ class SQLappWindow(QMainWindow):
             self.window.tabela.setHorizontalHeaderLabels(["Imie", "Nazwisko", "Zatrudniony", "Nr sali"])
             occur = False
             cursor.execute(
-                "SELECT imie, nazwisko, zatrudniony, id_sali FROM pielegniarka join pracownik on pracownik.id_prac = pielegniarka.id_prac")
+                "SELECT pielegniarka.id_prac, imie, nazwisko, zatrudniony, id_sali FROM pielegniarka join pracownik on pracownik.id_prac = pielegniarka.id_prac")
 
             tablerow = 0
             for item in cursor:
@@ -342,6 +368,12 @@ class SQLappWindow(QMainWindow):
 
             # sprawdz czy nie ma o tym samym peselu
 
+            if not imie.isalpha() or not nazwisko.isalpha() or not pesel.isnumeric():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
+
             insert_pacjent = """INSERT INTO pacjent VALUES (:pesel, :imie, :nazwisko, :data_ur)"""
             cursor.prepare(insert_pacjent)
 
@@ -359,6 +391,12 @@ class SQLappWindow(QMainWindow):
             pesel_o = self.p_odw_gM_peselO_edit.text()
             pesel = self.p_odw_gM_pesel_edit.text()
             st_pok = self.p_odw_gM_pokr_combo.currentText()
+
+            if not imie_o.isalpha() or not nazwisko_o.isalpha() or not pesel_o.isnumeric() or not pesel.isnumeric() or not st_pok.isalpha():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
 
             insert_pracownik = """INSERT INTO odwiedziny VALUES (:data_odw, :pesel_odw, :pesel, :imie_odw, :nazwisko_odw, :st_pokr)"""
             cursor.prepare(insert_pracownik)
@@ -440,6 +478,12 @@ class SQLappWindow(QMainWindow):
             id_sali = self.p_bed_gM_idsali_edit.text()
             pesel = self.p_bed_gM_pesel_edit.text()
             # update
+
+            if not pesel.isnumeric() or not id_lozka.isnumeric():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('id_lozka lub pesel jest nieprawidlowe')
+                error_dialog.exec_()
+                return
 
             update_lozko = ('UPDATE lozko SET pesel = :psl WHERE id_lozka = :id')
             cursor.execute(update_lozko, [pesel, id_lozka])
@@ -543,10 +587,16 @@ class SQLappWindow(QMainWindow):
         if self.tabWidget_3.currentIndex() == 0:
             pesel = self.l_klc_gM_pesel_edit.text()
             nazwa_chor = self.l_klc_gM_idchor_edit.text().upper()
-            nazwa_leku = self.l_klc_gM_idlek_edit.text().upper()
+            nazwa_chor = self.l_klc_gM_idlek_edit.text().upper()
             stan = self.l_klc_gM_stan_txt_edit.toPlainText()
 
             # insert
+            if not nazwa_chor.isalpha() or not nazwa_chor.isalpha() or not pesel.isnumeric():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
+
 
             insert_KARTA = """INSERT INTO karta_lecz_chor VALUES (DEFAULT, :pesel, (SELECT id_choroby from choroba WHERE nazwa in :nazwa_c), :d_zdiag, (SELECT id_leku from leki WHERE nazwa in :nazwa_l), :data_wpisu, :stan)"""
             cursor.prepare(insert_KARTA)
@@ -568,6 +618,12 @@ class SQLappWindow(QMainWindow):
             data_wizyt_r = self.l_appoin_gM_dateofappoin_dedit.date().year()
             data_wizyt_m = self.l_appoin_gM_dateofappoin_dedit.date().month()
             data_wizyt_d = self.l_appoin_gM_dateofappoin_dedit.date().day()
+
+            if not imie_l.isalpha() or not nazwisko_l.isalpha() or not pesel.isnumeric():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
 
             insert_pracownik = """INSERT INTO wizyta VALUES (DEFAULT, :data_wizyty, (SELECT id_prac FROM pracownik WHERE imie in :imie_l and nazwisko in :nazwisko_l),  :pesel)"""
             cursor.prepare(insert_pracownik)
@@ -592,6 +648,12 @@ class SQLappWindow(QMainWindow):
             # id choroby = nazwa?
             # insert
 
+            if not nazwa_oper.isalpha() or not imie_lek.isalpha() or not pesel_p.isnumeric() or not nazwisko_lek.isnumeric() or not nazwa_chor.isalpha():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
+
             insert_pracownik = """INSERT INTO operacja VALUES (DEFAULT, :data_op, :nazwa_op, :dl_trwania, :pesel, (SELECT id_choroby FROM choroba WHERE nazwa in :nazwa_c), (SELECT id_prac FROM pracownik WHERE imie in :imie_l and nazwisko in :nazwisko_l), :id_sali )"""
             cursor.prepare(insert_pracownik)
 
@@ -615,6 +677,12 @@ class SQLappWindow(QMainWindow):
             data_uro_m = self.p_pac_gM_date_dedit.date().month()
             data_uro_d = self.p_pac_gM_date_dedit.date().day()
             # sprawdz czy nie ma o tym samym peselu
+
+            if not imie.isalpha() or not nazwisko.isalpha() or not pesel.isnumeric():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.exec_()
+                return
 
             insert_pacjent = """INSERT INTO pacjent VALUES (:pesel, :imie, :nazwisko, :data_ur)"""
             cursor.prepare(insert_pacjent)
@@ -711,6 +779,12 @@ class SQLappWindow(QMainWindow):
             id_leku = self.l_klc_gM_idlek_edit.text()
             stan = self.l_klc_gM_stan_txt_edit.toPlainText()
             # update
+
+            if not stan.isalpha() or not nr_karty.isnumeric():
+                error_dialog = QtWidgets.QErrorMessage()
+                error_dialog.showMessage('stan lub nr_karty jest nieprawidlowe')
+                error_dialog.exec_()
+                return
 
             update_karta = 'UPDATE karta_lecz_chor SET stan = :stann where nr_karty in :karta'
             cursor.execute(update_karta, [stan, nr_karty])
