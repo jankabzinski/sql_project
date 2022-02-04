@@ -158,7 +158,7 @@ class SQLappWindow(QMainWindow):
 
             if not imie.isalpha() or not nazwisko.isalpha():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
@@ -181,7 +181,7 @@ class SQLappWindow(QMainWindow):
 
             if not imie.isalpha() or not nazwisko.isalpha() or not specjal.isalpha():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
@@ -370,7 +370,7 @@ class SQLappWindow(QMainWindow):
 
             if not imie.isalpha() or not nazwisko.isalpha() or not pesel.isnumeric():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
@@ -394,7 +394,7 @@ class SQLappWindow(QMainWindow):
 
             if not imie_o.isalpha() or not nazwisko_o.isalpha() or not pesel_o.isnumeric() or not pesel.isnumeric() or not st_pok.isalpha():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
@@ -593,7 +593,7 @@ class SQLappWindow(QMainWindow):
             # insert
             if not nazwa_chor.isalpha() or not nazwa_chor.isalpha() or not pesel.isnumeric():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
@@ -621,7 +621,7 @@ class SQLappWindow(QMainWindow):
 
             if not imie_l.isalpha() or not nazwisko_l.isalpha() or not pesel.isnumeric():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
@@ -650,7 +650,7 @@ class SQLappWindow(QMainWindow):
 
             if not nazwa_oper.isalpha() or not imie_lek.isalpha() or not pesel_p.isnumeric() or not nazwisko_lek.isnumeric() or not nazwa_chor.isalpha():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
@@ -680,7 +680,7 @@ class SQLappWindow(QMainWindow):
 
             if not imie.isalpha() or not nazwisko.isalpha() or not pesel.isnumeric():
                 error_dialog = QtWidgets.QErrorMessage()
-                error_dialog.showMessage('Uzupelnij wszystkie dane')
+                error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
