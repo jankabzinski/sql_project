@@ -261,6 +261,15 @@ class SQLappWindow(QMainWindow):
                 error_dialog.exec_()
                 return
 
+            komenda = ('SELECT count(*) from pielegniarka where id_prac = :id_p')
+            cursor.execute(komenda, [id_prac])
+            for item in cursor:
+                if str(item) != '(1,)':
+                    error_dialog = QtWidgets.QErrorMessage()
+                    error_dialog.showMessage('Bledny numer pracownika')
+                    error_dialog.exec_()
+                    return
+
             update_nazwisko = 'UPDATE pielegniarka SET nazwisko = :naz WHERE id_prac = :id'
 
             cursor.execute(update_nazwisko, [nazwisko, id_prac])
@@ -271,11 +280,20 @@ class SQLappWindow(QMainWindow):
             typ_sali = self.d_sal_gM_type_combo.currentText()
             # sprawdz czy istnieje sala po id_sali
 
-            if not id_sali.isnumeric() or not typ_sali.isalpha():
+            if not id_sali.isnumeric():
                 error_dialog = QtWidgets.QErrorMessage()
                 error_dialog.showMessage('id_sali lub typ_sali jest nieprawidlowe')
                 error_dialog.exec_()
                 return
+
+            komenda = ('SELECT count(*) from sala where id_sali = :id_s')
+            cursor.execute(komenda, [id_sali])
+            for item in cursor:
+                if str(item) != '(1,)':
+                    error_dialog = QtWidgets.QErrorMessage()
+                    error_dialog.showMessage('Bledny numer sali')
+                    error_dialog.exec_()
+                    return
 
             updateSala = ('UPDATE sala SET typ = :typp WHERE id_sali = :id_salii')
             cursor.execute(updateSala, [typ_sali, id_sali])
@@ -484,6 +502,27 @@ class SQLappWindow(QMainWindow):
                 error_dialog.showMessage('id_lozka lub pesel jest nieprawidlowe')
                 error_dialog.exec_()
                 return
+
+            komenda = ('SELECT count(*) from lozko where id_lozka = :id_l')
+            cursor.execute(komenda,[id_lozka])
+            for item in cursor:
+                if str(item) != '(1,)':
+                    error_dialog = QtWidgets.QErrorMessage()
+                    error_dialog.showMessage('Bledny numer lozka')
+                    error_dialog.exec_()
+                    return
+
+            komenda2 = ('SELECT count(*) from pacjent where pesel = :id_p')
+            cursor.execute(komenda2, [pesel])
+            for item in cursor:
+                if str(item) != '(1,)':
+                    error_dialog = QtWidgets.QErrorMessage()
+                    error_dialog.showMessage('Bledny pesel')
+                    error_dialog.exec_()
+                    return
+
+            update_wstepny = ('UPDATE lozko SET pesel = NULL WHERE pesel in :psssl')
+            cursor.execute(update_wstepny, [pesel])
 
             update_lozko = ('UPDATE lozko SET pesel = :psl WHERE id_lozka = :id')
             cursor.execute(update_lozko, [pesel, id_lozka])
@@ -785,6 +824,15 @@ class SQLappWindow(QMainWindow):
                 error_dialog.showMessage('stan lub nr_karty jest nieprawidlowe')
                 error_dialog.exec_()
                 return
+
+            komenda = ('SELECT count(*) from karta_lecz_chor where nr_karty = :id_k')
+            cursor.execute(komenda, [nr_karty])
+            for item in cursor:
+                if str(item) != '(1,)':
+                    error_dialog = QtWidgets.QErrorMessage()
+                    error_dialog.showMessage('Bledny numer karty')
+                    error_dialog.exec_()
+                    return
 
             update_karta = 'UPDATE karta_lecz_chor SET stan = :stann where nr_karty in :karta'
             cursor.execute(update_karta, [stan, nr_karty])
