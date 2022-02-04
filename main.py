@@ -12,16 +12,16 @@ from PyQt5 import QtCore as qtc
 from PyQt5 import QtGui as qtg
 
 cx_Oracle.init_oracle_client(lib_dir=r"C:\instantclient_21_3")
-
 hostname = 'admlab2.cs.put.poznan.pl'
 servicename = 'dblab02_students.cs.put.poznan.pl'
 
 # pwd = getpass.getpass('Hasło:\n')
 
 
-cnxn = cx_Oracle.connect(user='inf145220', password='inf145220', dsn='%s/%s' % (hostname, servicename), encoding="UTF-8")
+cnxn = cx_Oracle.connect(user='inf145210', password='summazyj123', dsn='%s/%s' % (hostname, servicename))
 cnxn.autocommit = True
 cursor = cnxn.cursor()
+
 
 class CardWidget(QWidget):
     def __init__(self):
@@ -133,6 +133,8 @@ class SQLappWindow(QMainWindow):
             self.l_search.setEnabled(True)
             self.l_delete.setEnabled(True)
             self.l_edit.setEnabled(True)
+            if self.tabWidget_3.currentIndex() == 0:
+                self.l_search.setEnabled(False)
             if self.tabWidget_3.currentIndex() == 4:
                 self.l_add.setEnabled(False)
                 self.l_delete.setEnabled(False)
@@ -142,9 +144,11 @@ class SQLappWindow(QMainWindow):
                 self.l_edit.setEnabled(False)
             elif self.tabWidget_3.currentIndex() in (1, 2):
                 self.l_edit.setEnabled(False)
+                self.l_search.setEnabled(False)
             elif self.tabWidget_3.currentIndex() == 5:
                 self.l_delete.setEnabled(False)
                 self.l_edit.setEnabled(False)
+                self.l_search.setEnabled(False)
             elif self.tabWidget_3.currentIndex() == 6:
                 self.l_add.setEnabled(False)
                 self.l_search.setEnabled(False)
@@ -162,16 +166,14 @@ class SQLappWindow(QMainWindow):
                 error_dialog.exec_()
                 return
 
-
             insert_pracownik = """INSERT INTO pracownik VALUES (DEFAULT, :imie, :nazwisko, :zatrudniony)"""
             cursor.prepare(insert_pracownik)
-
             cursor.execute(None,
                            imie=imie,
                            nazwisko=nazwisko,
                            zatrudniony=datetime.datetime.now()
                            )
-            insert_pielegniarka = 'INSERT INTO pielegniarka VALUES ((SELECT max(id_prac) FROM pracownik), '') '
+            insert_pielegniarka = "INSERT INTO pielegniarka VALUES ((SELECT max(id_prac) FROM pracownik), null) "
             cursor.execute(insert_pielegniarka)
             print("dodałem pielegniarke")
         if self.tabWidget.currentIndex() == 1:
@@ -195,7 +197,7 @@ class SQLappWindow(QMainWindow):
                            )
 
             insert_lekarz = (
-                'INSERT INTO lekarz VALUES ((SELECT max(id_prac) FROM pracownik), :SPECJALIZACJA, (SELECT min(id_sali) FROM sala WHERE typ in \'gabinet lekarski\'))')
+                "INSERT INTO lekarz VALUES ((SELECT max(id_prac) FROM pracownik), :SPECJALIZACJA, (SELECT min(id_sali) FROM sala WHERE typ in 'Gabinet lekarski'))")
             cursor.execute(insert_lekarz, [specjal])
 
             print("dodałem lekarza")
@@ -210,6 +212,7 @@ class SQLappWindow(QMainWindow):
             # select po id_prac
             # wprowadz otrzymany wynik do imienia i nazwiska
             # /błąd jak nie ma takiego rekordu/
+
             cursor.execute(
                 "SELECT pielegniarka.id_prac, imie, nazwisko, zatrudniony, id_sali FROM pielegniarka join pracownik on pracownik.id_prac = pielegniarka.id_prac")
             for item in cursor:
@@ -255,7 +258,7 @@ class SQLappWindow(QMainWindow):
             nazwisko = self.d_piel_gM_nazw_edit.text().upper()
             # sprawdz czy istnieje
 
-            if not id_prac.isnumeric() or not nazwisko.isalpha() :
+            if not id_prac.isnumeric() or not nazwisko.isalpha():
                 error_dialog = QtWidgets.QErrorMessage()
                 error_dialog.showMessage('Nazwisko lub id_pracownika jest nieprawidlowe')
                 error_dialog.exec_()
@@ -270,7 +273,7 @@ class SQLappWindow(QMainWindow):
                     error_dialog.exec_()
                     return
 
-            update_nazwisko = 'UPDATE pielegniarka SET nazwisko = :naz WHERE id_prac = :id'
+            update_nazwisko = 'UPDATE pracownik SET nazwisko = :naz WHERE id_prac = :id'
 
             cursor.execute(update_nazwisko, [nazwisko, id_prac])
             cursor.execute("COMMIT")
@@ -301,37 +304,37 @@ class SQLappWindow(QMainWindow):
             print("modify sala")
 
     def search_as_dyrektor(self):
+        self.window = SelectWidget()
         if self.tabWidget.currentIndex() == 0:
             imie = self.d_piel_gM_imie_edit.text().upper()
             nazwisko = self.d_piel_gM_nazw_edit.text().upper()
             # jezeli nic nie ma daj bład
             # select * from cos tam where imie = cos nazwisko = cos
-            self.window = SelectWidget()
-            self.window.tabela.setColumnCount(4)
+
+            self.window.tabela.setColumnCount(5)
             self.window.tabela.setRowCount(10)
-            self.window.tabela.setHorizontalHeaderLabels(["Imie", "Nazwisko", "Zatrudniony", "Nr sali"])
+            self.window.tabela.setHorizontalHeaderLabels(["ID prac", "Imie", "Nazwisko", "Zatrudniony", "Nr sali"])
             occur = False
             cursor.execute(
                 "SELECT pielegniarka.id_prac, imie, nazwisko, zatrudniony, id_sali FROM pielegniarka join pracownik on pracownik.id_prac = pielegniarka.id_prac")
-
             tablerow = 0
             for item in cursor:
                 item = tuple(map(str, item))
                 if imie != '':
-                    if imie == item[0]:
+                    if imie == item[1]:
                         occur = True
                     else:
                         occur = False
                         continue
                 if nazwisko != '':
-                    if nazwisko == item[1]:
+                    if nazwisko == item[2]:
                         occur = True
                     else:
                         occur = False
                         continue
 
                 if occur:
-                    for i in range(4):
+                    for i in range(5):
                         self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                     tablerow += 1
 
@@ -340,10 +343,10 @@ class SQLappWindow(QMainWindow):
             imie = self.d_lek_gM_imie_edit.text().upper()
             nazwisko = self.d_lek_gM_nazw_edit.text().upper()
             specjal = self.d_lek_gM_spec_edit.text().upper()
-            self.window = SelectWidget()
             self.window.tabela.setColumnCount(5)
             self.window.tabela.setRowCount(10)
-            self.window.tabela.setHorizontalHeaderLabels(["Imie", "Nazwisko", "Zatrudniony", "Nr sali", "Specjalizacja"])
+            self.window.tabela.setHorizontalHeaderLabels(
+                ["Imie", "Nazwisko", "Zatrudniony", "Nr sali", "Specjalizacja"])
             occur = False
             cursor.execute(
                 "SELECT imie, nazwisko, zatrudniony, id_sali as nr_sali, specjalizacja  FROM pracownik join lekarz on pracownik.id_prac = lekarz.id_prac")
@@ -364,7 +367,7 @@ class SQLappWindow(QMainWindow):
                         occur = False
                         continue
                 if specjal != '':
-                    if specjal == item[2]:
+                    if specjal == item[4]:
                         occur = True
                     else:
                         occur = False
@@ -374,6 +377,8 @@ class SQLappWindow(QMainWindow):
                         self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                     tablerow += 1
             print("search lek")
+
+        self.window.show()
 
     def add_as_piel(self):
         if self.tabWidget_2.currentIndex() == 0:
@@ -504,7 +509,7 @@ class SQLappWindow(QMainWindow):
                 return
 
             komenda = ('SELECT count(*) from lozko where id_lozka = :id_l')
-            cursor.execute(komenda,[id_lozka])
+            cursor.execute(komenda, [id_lozka])
             for item in cursor:
                 if str(item) != '(1,)':
                     error_dialog = QtWidgets.QErrorMessage()
@@ -555,7 +560,7 @@ class SQLappWindow(QMainWindow):
             occur = False
 
             cursor.execute(
-                 "SELECT p.* FROM pacjent p")
+                "SELECT p.* FROM pacjent p")
 
             tablerow = 0
             for item in cursor:
@@ -585,8 +590,8 @@ class SQLappWindow(QMainWindow):
                     tablerow += 1
             print("szukaj pacjent")
         if self.tabWidget_2.currentIndex() == 1:
-            imie_o = self.p_odw_gM_imie_edit.text()
-            nazwisko_o = self.p_odw_gM_nazw_edit.text()
+            imie_o = self.p_odw_gM_imie_edit.text().upper()
+            nazwisko_o = self.p_odw_gM_nazw_edit.text().upper()
             pesel_o = self.p_odw_gM_peselO_edit.text()
             pesel = self.p_odw_gM_pesel_edit.text()
             st_pok = self.p_odw_gM_pokr_combo.currentText()
@@ -594,8 +599,9 @@ class SQLappWindow(QMainWindow):
             self.window = SelectWidget()
             self.window.tabela.setColumnCount(6)
             self.window.tabela.setRowCount(50)
-            self.window.tabela.setHorizontalHeaderLabels(["Imie", "Nazwisko", "Imie odwiedzajacego", "Nazwisko odwiedzajacego", "Stopien pokrewienstwa",
-                     "Data odwiedzin"])
+            self.window.tabela.setHorizontalHeaderLabels(
+                ["Imie", "Nazwisko", "Imie odwiedzajacego", "Nazwisko odwiedzajacego", "Stopien pokrewienstwa",
+                 "Data odwiedzin"])
             occur = False
             cursor.execute(
                 "SELECT imie, nazwisko, imie_odw, nazwisko_odw, st_pokrewienstwa, data_odw FROM odwiedziny o join pacjent p on p.pesel = o.pesel")
@@ -615,36 +621,41 @@ class SQLappWindow(QMainWindow):
                     else:
                         occur = False
                         continue
+                if st_pok != '':
+                    if st_pok == item[4]:
+                        occur = True
+                    else:
+                        occur = False
+                        continue
 
                 if occur:
                     for i in range(6):
                         self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                     tablerow += 1
             print("szukaj odwiedz")
+        self.window.show()
 
     def add_as_lek(self):
         if self.tabWidget_3.currentIndex() == 0:
             pesel = self.l_klc_gM_pesel_edit.text()
             nazwa_chor = self.l_klc_gM_idchor_edit.text().upper()
-            nazwa_chor = self.l_klc_gM_idlek_edit.text().upper()
+            nazwa_leku = self.l_klc_gM_idlek_edit.text().upper()
             stan = self.l_klc_gM_stan_txt_edit.toPlainText()
 
             # insert
-            if not nazwa_chor.isalpha() or not nazwa_chor.isalpha() or not pesel.isnumeric():
+            if not nazwa_chor.isalpha() or not nazwa_leku.isalpha() or not pesel.isnumeric():
                 error_dialog = QtWidgets.QErrorMessage()
                 error_dialog.showMessage('Uzupelnij wszystkie dane poprawnie')
                 error_dialog.exec_()
                 return
 
-
             insert_KARTA = """INSERT INTO karta_lecz_chor VALUES (DEFAULT, :pesel, (SELECT id_choroby from choroba WHERE nazwa in :nazwa_c), :d_zdiag, (SELECT id_leku from leki WHERE nazwa in :nazwa_l), :data_wpisu, :stan)"""
             cursor.prepare(insert_KARTA)
-
             cursor.execute(None,
                            pesel=pesel,
-                           nazwa_c=nazwa_leku,
+                           nazwa_c=nazwa_chor,
                            d_zdiag=datetime.date.today(),
-                           nazwa_l=nazwa_chor,
+                           nazwa_l=nazwa_leku,
                            data_wpisu=datetime.date.today(),
                            stan=stan
                            )
@@ -849,6 +860,7 @@ class SQLappWindow(QMainWindow):
             print("edytuj choroba")
 
     def search_as_lekarz(self):
+        self.window = SelectWidget()
         if self.tabWidget_3.currentIndex() == 0:
             pesel = self.l_klc_gM_pesel_edit.text()
             id_choroby = self.l_klc_gM_idchor_edit.text()
@@ -869,18 +881,73 @@ class SQLappWindow(QMainWindow):
             id_sali = self.l_oper_gM_idsali_edit.text()
             data_oper = self.l_oper_gM_date_dedit.date().toString("yyyy-MM-dd")
             czas = self.l_oper_gM_time_spinbox.value()
-
             # select
             print("szukam operacje")
         if self.tabWidget_3.currentIndex() == 3:
-            nazwa_lek = self.l_leki_gM_nazwa_edit.text()
+            nazwa_lek = self.l_leki_gM_nazwa_edit.text().upper()
             na_rec = self.l_leki_gM_rec_combo.currentText()
             # select
+            self.window.tabela.setColumnCount(3)
+            self.window.tabela.setRowCount(10)
+            self.window.tabela.setHorizontalHeaderLabels(["Id leku", "Nazwa", "Na recepte"])
+            occur = False
+
+            cursor.execute(
+                "SELECT * FROM leki")
+
+            tablerow = 0
+            for item in cursor:
+                item = tuple(map(str, item))
+                if nazwa_lek != '':
+                    if nazwa_lek == item[1]:
+                        occur = True
+                    else:
+                        occur = False
+                        continue
+                if na_rec != '':
+                    if na_rec == item[2]:
+                        occur = True
+                    else:
+                        occur = False
+                        continue
+
+                if occur:
+                    for i in range(3):
+                        self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
+                    tablerow += 1
             print("szukam leki")
+
         if self.tabWidget_3.currentIndex() == 4:
-            nazwa_chor = self.l_chor_gM_nazwa_edit.text()
+            nazwa_chor = self.l_chor_gM_nazwa_edit.text().upper()
             ulecz = self.l_chor_gM_ulecz_combo.currentText()
             # select
+            self.window.tabela.setColumnCount(3)
+            self.window.tabela.setRowCount(10)
+            self.window.tabela.setHorizontalHeaderLabels(["Id choroby", "Nazwa choroby", "Uleczalność"])
+            occur = False
+
+            cursor.execute("SELECT * FROM choroba")
+
+            tablerow = 0
+            for item in cursor:
+                item = tuple(map(str, item))
+                if nazwa_chor != '':
+                    if nazwa_chor == item[1]:
+                        occur = True
+                    else:
+                        occur = False
+                        continue
+                if ulecz != '':
+                    if ulecz == item[2]:
+                        occur = True
+                    else:
+                        occur = False
+                        continue
+
+                if occur:
+                    for i in range(3):
+                        self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
+                    tablerow += 1
             print("szukam choroba")
         if self.tabWidget_3.currentIndex() == 5:
             imie = self.p_pac_gM_imie_edit_3.text()
@@ -889,39 +956,41 @@ class SQLappWindow(QMainWindow):
             data = self.p_pac_gM_date_dedit_3.date().toString("yyyy-MM-dd")
             # select po tym co nie jest null
             print("szukam pacjent")
+        self.window.show()
 
     def show_all(self, name):
         self.window = SelectWidget()
         self.window.wynik_label.setText(name)
         if self.stackedWidget.currentIndex() == 1:
             if self.tabWidget.currentIndex() == 0:
-                self.window.tabela.setColumnCount(4)
+                self.window.tabela.setColumnCount(5)
                 self.window.tabela.setRowCount(50)
-                self.window.tabela.setHorizontalHeaderLabels(["Imie", "Nazwisko", "Zatrudniony", "Nr sali"])
+                self.window.tabela.setHorizontalHeaderLabels(["Id prac", "Imie", "Nazwisko", "Zatrudniony", "Nr sali"])
 
                 cursor.execute(
-                    "SELECT imie, nazwisko, zatrudniony, id_sali FROM pielegniarka join pracownik on pracownik.id_prac = pielegniarka.id_prac")
+                    "SELECT pielegniarka.id_prac, imie, nazwisko, zatrudniony, id_sali FROM pielegniarka join pracownik on pracownik.id_prac = pielegniarka.id_prac")
 
                 tablerow = 0
                 for item in cursor:
+                    print(item)
                     item = tuple(map(str, item))
-                    for i in range(4):
+                    for i in range(5):
                         self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                     tablerow += 1
 
             if self.tabWidget.currentIndex() == 1:
-                self.window.tabela.setColumnCount(5)
+                self.window.tabela.setColumnCount(6)
                 self.window.tabela.setRowCount(50)
                 self.window.tabela.setHorizontalHeaderLabels(
-                    ["Imie", "Nazwisko", "Zatrudniony", "Nr sali", "Specjalizacja"])
+                    ["Id prac", "Imie", "Nazwisko", "Zatrudniony", "Nr sali", "Specjalizacja"])
 
                 cursor.execute(
-                    "SELECT imie, nazwisko, zatrudniony, id_sali as nr_sali, specjalizacja  FROM pracownik join lekarz on pracownik.id_prac = lekarz.id_prac")
+                    "SELECT lekarz.id_prac, imie, nazwisko, zatrudniony, id_sali as nr_sali, specjalizacja  FROM pracownik join lekarz on pracownik.id_prac = lekarz.id_prac")
 
                 tablerow = 0
                 for item in cursor:
                     item = tuple(map(str, item))
-                    for i in range(5):
+                    for i in range(6):
                         self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                     tablerow += 1
 
@@ -979,7 +1048,7 @@ class SQLappWindow(QMainWindow):
                     ["Pacjent", "Id lozka", "Id sali", "PESEL", "Usytuowanie", "Respirator"])
 
                 cursor.execute(
-                    "SELECT  imie ||' '|| nazwisko as pacjent, l.* FROM lozko l right join pacjent p on l.pesel = p.pesel")
+                    "SELECT  imie ||' '|| nazwisko as pacjent, l.* FROM lozko l left join pacjent p on l.pesel = p.pesel")
 
                 tablerow = 0
                 for item in cursor:
@@ -1049,18 +1118,19 @@ class SQLappWindow(QMainWindow):
                         self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                     tablerow += 1
             if self.tabWidget_3.currentIndex() == 2:
-                self.window.tabela.setColumnCount(6)
+                self.window.tabela.setColumnCount(7)
                 self.window.tabela.setRowCount(50)
                 self.window.tabela.setHorizontalHeaderLabels(
-                    ["Id operacji", "Choroba", "Nazwa operacja", "Data operacji", "Lekarz", "Czas trwania operacji"])
+                    ["Id operacji", "PESEL pacjenta", "Choroba", "Nazwa operacja", "Data operacji", "Lekarz",
+                     "Czas trwania operacji"])
 
                 cursor.execute(
-                    "SELECT id_operacji, nazwa, nazwa_operacji, data_operacji, imie || ' ' || nazwisko as lekarz, długość_trwania || ' minut' as czas_trwania_operacji FROM choroba c join operacja o on c.id_choroby = o.id_choroby join pracownik p on o.id_prac = p.id_prac")
+                    "SELECT id_operacji, pesel, nazwa, nazwa_operacji, data_operacji, imie || ' ' || nazwisko as lekarz, długość_trwania || ' minut' as czas_trwania_operacji FROM choroba c join operacja o on c.id_choroby = o.id_choroby join pracownik p on o.id_prac = p.id_prac")
 
                 tablerow = 0
                 for item in cursor:
                     item = tuple(map(str, item))
-                    for i in range(6):
+                    for i in range(7):
                         self.window.tabela.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                     tablerow += 1
             if self.tabWidget_3.currentIndex() == 3:
@@ -1131,34 +1201,33 @@ class SQLappWindow(QMainWindow):
 
             if self.stackedWidget.currentIndex() == 2:
                 pesel = self.p_pac_gKLC_pesel_edit.text()
-
-            self.window.tabela_pacjent.setColumnCount(4)
-            self.window.tabela_pacjent.setRowCount(2)
-            self.window.tabela_pacjent.setHorizontalHeaderLabels(["PESEL", "Imie", "Nazwisko", "Data urodzenia"])
-
+            self.wine.tabela_pacjent.setColumnCount(4)
+            self.wine.tabela_pacjent.setRowCount(1)
+            self.wine.tabela_pacjent.setHorizontalHeaderLabels(["PESEL", "Imie", "Nazwisko", "Data urodzenia"])
             select_cos = ("SELECT * FROM pacjent WHERE pesel in :pesel")
-            cursor.execute(select_cos, ["", pesel])
+            cursor.execute(select_cos, [pesel])
             tablerow = 0
             for item in cursor:
                 item = tuple(map(str, item))
                 for i in range(4):
-                    self.window.tabela_pacjent.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
+                    self.wine.tabela_pacjent.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                 tablerow += 1
 
-            self.window.tabela_karta.setColumnCount(8)
-            self.window.tabela_karta.setRowCount(20)
-            self.window.tabela_karta.setHorizontalHeaderLabels(["Nr karty", "PESEL", "Choroba", "Uleczalność", "Stan", "data_wpisu", "lek", "Data_zdiag"])
+            self.wine.tabela_karta.setColumnCount(8)
+            self.wine.tabela_karta.setRowCount(12)
+            self.wine.tabela_karta.setHorizontalHeaderLabels(
+                ["Nr karty", "PESEL", "Choroba", "Uleczalność", "Stan", "data_wpisu", "lek", "Data_zdiag"])
 
-            select_cos = ("SELECT nr_karty, pesel, c.nazwa, uleczalnosc, stan, data_wpisu, l.nazwa,  d_zdiag FROM choroba c join karta_lecz_chor k on c.id_choroby = k.id_choroby join leki l on k.id_leku = l.id_leku where pesel in :pes")
-            cursor.execute(select_cos, ["", pesel])
+            select_cos = (
+                "SELECT nr_karty, pesel, c.nazwa, uleczalnosc, stan, data_wpisu, l.nazwa,  d_zdiag FROM choroba c join karta_lecz_chor k on c.id_choroby = k.id_choroby join leki l on k.id_leku = l.id_leku where pesel in :pes")
+            cursor.execute(select_cos, [pesel])
             tablerow = 0
             for item in cursor:
                 item = tuple(map(str, item))
                 for i in range(8):
-                    self.window.tabela_pacjent.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
+                    self.wine.tabela_karta.setItem(tablerow, i, QtWidgets.QTableWidgetItem(item[i]))
                 tablerow += 1
         self.wine.show()
-        print("gówno")
 
 
 if __name__ == '__main__':
